@@ -27,7 +27,7 @@ pipeline {
                 bat "docker run -d --2350 ankurmca/2350_isa2"
                 }
           }
-    }  
+       }  
 
     post {  
         always {  
@@ -41,4 +41,5 @@ pipeline {
             echo "There was an error building the Docker image."  
         }  
     }  
+}
 }
