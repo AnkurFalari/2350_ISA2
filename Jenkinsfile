@@ -1,26 +1,21 @@
-pipeline {
-   agent any
-   stages {
-  
-    stage('Build docker image') {
-        steps {
-            scripts {
-                bat "docker build -t ankurmca/2350_ISA2 ."
-                }
-            }
-        }
-	
-	stage('Build & run docker container') {
-        steps {
-            scripts {
-                bat "docker rm -f my-app-container || exit 0"
-                    
-                bat "docker run -d --name my-app-container ankurmca/2350_ISA2"
-                }
-          }
-      }
-		
-		
+pipeline {  
+    agent any  
 
-   }	
+    stages {  
+        stage('Clone Repository') {  
+            steps {  
+                // Clone the repository from GitHub  
+                git branch: 'main', url: 'https://github.com/USERNAME/REPOSITORY_NAME.git'  
+                // If the repository is private, use credentials  
+                // git credentialsId: 'your-credentials-id', branch: 'main', url: 'https://github.com/USERNAME/REPOSITORY_NAME.git'  
+            }  
+        }  
+    }  
+
+    post {  
+        always {  
+            // Archive the workspace or perform other post-build actions  
+            echo 'Finished cloning the repository.'  
+        }  
+    }  
 }
