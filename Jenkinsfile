@@ -16,8 +16,17 @@ pipeline {
                     // Build the Docker image  
                     bat "docker build -t ankurmca/2350_isa2 ." 
                 }  
-            }  
-        }    
+            }
+        }
+
+        stage('Build & run docker container') {
+        steps {
+            script {
+                bat "docker rm -f 2350 || exit 0"
+                    
+                bat "docker run -d --2350 ankurmca/2350_isa2"
+                }
+          }
     }  
 
     post {  
