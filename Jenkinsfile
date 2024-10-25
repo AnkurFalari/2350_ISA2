@@ -1,11 +1,6 @@
 pipeline {  
     agent any  
 
-    environment {  
-        // Define the Docker image name and tag  
-        IMAGE_NAME = '2350_ISA2'  
-        IMAGE_TAG = 'latest'  
-    }  
 
     stages {  
         stage('Clone Repository') {  
@@ -19,7 +14,7 @@ pipeline {
             steps {  
                 script {  
                     // Build the Docker image  
-                    sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."  
+                    bat "docker build -t ankurmca/2350_ISA2 ." 
                 }  
             }  
         }    
@@ -31,7 +26,7 @@ pipeline {
             cleanWs()  
         }  
         success {  
-            echo "Docker image ${IMAGE_NAME}:${IMAGE_TAG} built and pushed successfully."  
+            echo "Docker image built successfully."  
         }  
         failure {  
             echo "There was an error building the Docker image."  
