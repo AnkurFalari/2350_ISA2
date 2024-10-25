@@ -14,7 +14,7 @@ pipeline {
             steps {  
                 script {  
                     // Build the Docker image  
-                    bat "docker build -t ankurmca/2350_ISA2 ." 
+                    bat "docker build -t ankurmca/2350_isa2 ." 
                 }  
             }  
         }    
