@@ -27,7 +27,8 @@ pipeline {
                 bat "docker run -d --2350 ankurmca/2350_isa2"
                 }
           }
-       }  
+       }
+    }   
 
     post {  
         always {  
