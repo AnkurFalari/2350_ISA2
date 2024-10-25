@@ -11,7 +11,7 @@ pipeline {
         stage('Clone Repository') {  
             steps {  
                 // Checkout the repository containing the Dockerfile  
-                git branch: 'main', url: 'https://github.com/USERNAME/REPOSITORY_NAME.git'  
+                git branch: 'main', url: 'https://github.com/AnkurFalari/2350_ISA2.git'  
             }  
         }  
 
