@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repository') {  
             steps {  
                 // Clone the repository from GitHub  
-                git branch: 'main', url: 'https://github.com/USERNAME/REPOSITORY_NAME.git'  
+                git branch: 'main', url: 'https://github.com/AnkurFalari/2350_ISA2.git'  
                 // If the repository is private, use credentials  
                 // git credentialsId: 'your-credentials-id', branch: 'main', url: 'https://github.com/USERNAME/REPOSITORY_NAME.git'  
             }  
