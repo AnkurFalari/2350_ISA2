@@ -24,7 +24,7 @@ pipeline {
             script {
                 bat "docker rm -f 2350 || exit 0"
                     
-                bat "docker run -d --2350 ankurmca/2350_isa2"
+                bat "docker run --2350 ankurmca/2350_isa2"
                 }
           }
        }
