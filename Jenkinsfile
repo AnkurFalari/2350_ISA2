@@ -22,7 +22,7 @@ pipeline {
         stage('Build & run docker container') {
         steps {
             script {
-                bat "docker rm -f 2350 || exit 0"
+                bat "docker rm -f 2350"
                     
                 bat "docker run -d --name 2350 ankurmca/2350_isa2"
                 }
